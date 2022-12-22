@@ -15,8 +15,7 @@ terraform {
 
 module "main" {
   source = "../.."
-
-  name = "TEST_GRP_MIN"
+  name   = "TEST_GRP_MIN"
 }
 
 data "aci_rest_managed" "spanVDestGrp" {

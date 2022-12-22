@@ -14,8 +14,7 @@ terraform {
 }
 
 module "main" {
-  source = "../.."
-
+  source      = "../.."
   name        = "TEST_GRP"
   description = "My VSPAN TEST Destination Group"
   destinations = [
