@@ -16,33 +16,20 @@ terraform {
 module "main" {
   source = "../.."
 
-  name = "ABC"
+  name = "TEST_GRP_MIN"
 }
 
-data "aci_rest_managed" "fvTenant" {
-  dn = "uni/tn-ABC"
-
+data "aci_rest_managed" "spanVDestGrp" {
+  dn         = "uni/infra/vdestgrp-TEST_GRP_MIN"
   depends_on = [module.main]
 }
 
-resource "test_assertions" "fvTenant" {
-  component = "fvTenant"
+resource "test_assertions" "spanVDestGrp" {
+  component = "spanVDestGrp"
 
   equal "name" {
     description = "name"
-    got         = data.aci_rest_managed.fvTenant.content.name
-    want        = "ABC"
-  }
-
-  equal "nameAlias" {
-    description = "nameAlias"
-    got         = data.aci_rest_managed.fvTenant.content.nameAlias
-    want        = ""
-  }
-
-  equal "descr" {
-    description = "descr"
-    got         = data.aci_rest_managed.fvTenant.content.descr
-    want        = ""
+    got         = data.aci_rest_managed.spanVDestGrp.content.name
+    want        = "TEST_GRP_MIN"
   }
 }

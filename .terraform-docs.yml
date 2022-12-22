@@ -3,14 +3,15 @@ version: '>= 0.14.0'
 formatter: markdown table
 
 content: |-
-  [![Tests](https://github.com/netascode/terraform-aci-scaffolding/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-scaffolding/actions/workflows/test.yml)
+  [![Tests](https://github.com/netascode/terraform-aci-vspan-destination-group/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-vspan-destination-group/actions/workflows/test.yml)
 
-  # Terraform ACI Scaffolding Module
+  # Terraform ACI VSPAN Destination Group Module
 
-  Description
-
+  Manages ACI VSPAN Destination Group
+  
   Location in GUI:
-  `Tenants` » `XXX`
+  `Fabric` » `Access Policies` » `Policies` » `Troubleshooting` » `VSPAN` » `VSPAN Destination Groups`
+
 
   ## Examples
 
