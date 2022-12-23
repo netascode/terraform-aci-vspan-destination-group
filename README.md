@@ -14,7 +14,7 @@ Location in GUI:
 ```hcl
 module "aci_vspan_destination_group" {
   source  = "netascode/vspan-destination-group/aci"
-  version = ">= 0.0.1"
+  version = ">= 0.1.0"
 
   name        = "DST_GRP"
   description = "My VSPAN Destination Group"
@@ -44,7 +44,7 @@ module "aci_vspan_destination_group" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_aci"></a> [aci](#requirement\_aci) | >= 2.0.0 |
 
 ## Providers
@@ -57,8 +57,8 @@ module "aci_vspan_destination_group" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | VSPAN Destination Group name. | `string` | n/a | yes |
-| <a name="input_description"></a> [description](#input\_description) | VSPAN Destination Group description. | `string` | `""` | no |
+| <a name="input_name"></a> [name](#input\_name) | VSPAN destination group name. | `string` | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | VSPAN destination group description. | `string` | `""` | no |
 | <a name="input_destinations"></a> [destinations](#input\_destinations) | List of VSPAN destinations. | <pre>list(object({<br>    description         = optional(string, "")<br>    name                = string<br>    tenant              = optional(string)<br>    application_profile = optional(string)<br>    endpoint_group      = optional(string)<br>    client_endpoint     = optional(string)<br>    ip                  = optional(string)<br>    mtu                 = optional(number, 1518)<br>    ttl                 = optional(number, 64)<br>    flow_id             = optional(number, 1)<br>    dscp                = optional(string, "unspecified")<br>  }))</pre> | `[]` | no |
 
 ## Outputs
