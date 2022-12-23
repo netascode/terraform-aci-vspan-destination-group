@@ -27,7 +27,7 @@ variable "destinations" {
     tenant              = optional(string)
     application_profile = optional(string)
     endpoint_group      = optional(string)
-    client_endpoint     = optional(string)
+    endpoint            = optional(string)
     ip                  = optional(string)
     mtu                 = optional(number, 1518)
     ttl                 = optional(number, 64)
@@ -74,7 +74,7 @@ variable "destinations" {
 
   validation {
     condition = alltrue([
-      for d in var.destinations : d.client_endpoint == null || can(regex("^[a-zA-Z0-9_.:-]{0,64}$", d.client_endpoint))
+      for d in var.destinations : d.endpoint == null || can(regex("^[a-zA-Z0-9_.:-]{0,64}$", d.endpoint))
     ])
     error_message = "Allowed characters: `a`-`z`, `A`-`Z`, `0`-`9`, `_`, `.`, `-`. Maximum characters: 64."
   }

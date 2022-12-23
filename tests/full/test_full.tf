@@ -33,7 +33,7 @@ module "main" {
       tenant              = "Tenant-1"
       application_profile = "AP1"
       endpoint_group      = "EPG1"
-      client_endpoint     = "01:23:45:67:89:AB"
+      endpoint            = "01:23:45:67:89:AB"
     }
   ]
 }
